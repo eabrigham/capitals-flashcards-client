@@ -5,7 +5,7 @@ const onNewQuestion = function(event) {
     event.preventDefault()
     console.log('new question clicked')
     api.getQuizzes()
-        .then((data) => console.log('get quizzes ran and the data is ', data))
+        .then(ui.newQuestion)
         .catch((errors) => console.log('get quizzes failed and errors are ', errors))
 }
 
