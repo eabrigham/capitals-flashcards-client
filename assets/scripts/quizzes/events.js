@@ -8,21 +8,24 @@ const onNewQuestion = function(event) {
     console.log('new question clicked')
     api.getQuizzes()
         .then(ui.newQuestion)
-        .catch((errors) => console.log('get quizzes failed and errors are ', errors))
+        .catch(ui.apiFailure)
 }
 
 const onAnswerQuestion = function(event) {
     event.preventDefault()
     const consecutiveCorrect = getConsecutiveCorrect (event)
 
-    // ajax request with updated consecutive_correct for quiz
     if (consecutiveCorrect >= 3) {
         // congradulate user and delete quiz
+        api.deleteQuiz()
+            .then(ui.deleteSuccess)
+            .catch(ui.apiFailure)
     } else {
-        api.updateCorrect(updateApiJSON(consecutiveCorrect))
-        .then((data) => console.log('api.updateCorrect ran and the data is ', data))
-        .catch((error) => console.log('api.updateCorrect failed and the errors are ', error))
-    // ui to user "correct!" or "the capital is __"
+        // ajax request with updated consecutive_correct for quiz
+        api.updateQuiz(updateApiJSON(consecutiveCorrect))
+         // ui to user "correct!" or "the capital is __"
+            .then(ui.updateQuizSuccess)
+            .catch(ui.apiFailure)
     }
 }
 

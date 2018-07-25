@@ -11,7 +11,7 @@ const getQuizzes = function () {
     })
 }
 
-const updateCorrect = function (data) {
+const updateQuiz = function (data) {
     return $.ajax({
         url: config.apiUrl + '/quizzes/' + store.quiz.id,
         method: 'PATCH',
@@ -24,7 +24,18 @@ const updateCorrect = function (data) {
     })
 }
 
+const deleteQuiz = function () {
+    return $.ajax({
+        url: config.apiUrl + '/quizzes/' + store.quiz.id,
+        method: 'DELETE',
+        headers: {
+          Authorization: 'Token token=' + store.user.token
+        }
+      })
+}
+
 module.exports = {
     getQuizzes,
-    updateCorrect
+    updateQuiz,
+    deleteQuiz
 }
