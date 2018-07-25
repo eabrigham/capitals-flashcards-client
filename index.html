@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Capital Flashcards</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -12,14 +12,23 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+    <header>
+      <h1>Capital Flashcards</h1>
 
-      <form id = 'sign-up'>
-        <input type = 'text' name = 'credentials[email]' placeholder='Email'>
-        <input type = 'password' name='credentials[password]' placeholder='Password'>
-        <input type = 'password' name='credentials[password_confirmation]' placeholder='Confirm Password'>
-        <input type = 'submit' value='Sign Up'>
-      </form>
+      <button id='sign-up-button'>Sign Up</button>
+      <button id='sign-in-button'>Sign In</button>
+
+
+      <div id = 'sign-up-modal' class = 'modal'>
+        <div class = 'modal-content'>
+          <form id = 'sign-up'>
+            <input type = 'text' name = 'credentials[email]' placeholder='Email'>
+            <input type = 'password' name='credentials[password]' placeholder='Password'>
+            <input type = 'password' name='credentials[password_confirmation]' placeholder='Confirm Password'>
+            <input type = 'submit' value='Sign Up'>
+          </form>
+        </div>
+      </div>  
 
       <form id = 'sign-in'>
         <input type = 'text' name = 'credentials[email]' placeholder='Email'>
@@ -38,6 +47,7 @@
       </form>
 
       <p id = 'message'></p>
+    </header>
 
       <div>
         <p id = 'question'></p>

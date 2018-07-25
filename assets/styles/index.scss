@@ -1,2 +1,18 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+body {
+    text-align: center;
+}
+header {
+    background: url("https://imgur.com/OdseQ9O");
+    background-size: cover;
+}
+
+.modal {
+    display: none;
+}
+
+.modal-content {
+    
+}

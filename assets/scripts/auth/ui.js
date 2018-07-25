@@ -23,7 +23,7 @@ const signInSuccess = function (data) {
   document.getElementById('sign-in').reset()
   $('#message').text('Signed in successfully')
   $('#sign-up, #sign-in').css('visibility', 'hidden')
-  $('#sign-out, #change-password, #new-game, #display-games').css('visibility', 'visible')
+  $('#sign-out, #change-password').css('visibility', 'visible')
   store.user = data.user
 }
 
@@ -46,8 +46,7 @@ const signOutSuccess = function (data) {
   document.getElementById('sign-out').reset()
   $('#message').text('Signed out successfully')
   $('#sign-up, #sign-in').css('visibility', 'visible')
-  $('#sign-out, #change-password, #new-game, #display-games').css('visibility', 'hidden')
-  $('#game-board').empty()
+  $('#sign-out, #change-password').css('visibility', 'hidden')
   store.user = null
 }
 

@@ -44,6 +44,9 @@ const onChangePassword = function (event) {
 }
 
 const addHandler = () => {
+  // button modal handlers
+  $('#sign-up-button').on('click', () => $('#sign-up-modal').css('display', 'block'))
+
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
   $('#change-password').on('submit', onChangePassword)
