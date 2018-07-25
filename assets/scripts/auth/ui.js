@@ -22,8 +22,8 @@ const signInSuccess = function (data) {
   console.log('sign in success ran')
   document.getElementById('sign-in').reset()
   $('#message').text('Signed in successfully')
-  $('#sign-up, #sign-in').css('visibility', 'hidden')
-  $('#sign-out, #change-password').css('visibility', 'visible')
+  $('#sign-up-button, #sign-in-button').css('display', 'none')
+  $('#sign-out-button, #change-password-button').css('display', 'inline')
   store.user = data.user
 }
 
@@ -43,10 +43,9 @@ const changePasswordFailure = function (err) {
 }
 
 const signOutSuccess = function (data) {
-  document.getElementById('sign-out').reset()
   $('#message').text('Signed out successfully')
-  $('#sign-up, #sign-in').css('visibility', 'visible')
-  $('#sign-out, #change-password').css('visibility', 'hidden')
+  $('#sign-up-button, #sign-in-button').css('display', 'inline')
+  $('#sign-out-button, #change-password-button').css('display', 'none')
   store.user = null
 }
 

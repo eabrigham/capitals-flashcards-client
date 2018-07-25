@@ -29,6 +29,7 @@ const onSignIn = function (event) {
 }
 
 const onSignOut = function (event) {
+  console.log('running sign out function')
   event.preventDefault()
   api.signOut()
     .then(ui.signOutSuccess)
@@ -46,6 +47,8 @@ const onChangePassword = function (event) {
 const addHandler = () => {
   // button modal handlers
   $('#sign-up-button').on('click', () => $('#sign-up-modal').css('display', 'block'))
+  $('#sign-in-button').on('click', () => $('#sign-in-modal').css('display', 'block')) 
+  $('#change-password-button').on('click', () => $('#change-password-modal').css('display', 'block')) 
 
   $(".close").on('click', () => $(".modal").css("display", "none"))
 
@@ -53,7 +56,7 @@ const addHandler = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
   $('#change-password').on('submit', onChangePassword)
-  $('#sign-out').on('submit', onSignOut)
+  $('#sign-out-button').on('click', onSignOut)
 
 }
 

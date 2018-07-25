@@ -17,6 +17,8 @@
 
       <button id='sign-up-button'>Sign Up</button>
       <button id='sign-in-button'>Sign In</button>
+      <button id='change-password-button'>Change Password</button>
+      <button id='sign-out-button'>Sign Out</button>
 
 
       <div id = 'sign-up-modal' class = 'modal'>
@@ -31,21 +33,31 @@
         </div>
       </div>  
 
-      <form id = 'sign-in'>
-        <input type = 'text' name = 'credentials[email]' placeholder='Email'>
-        <input type = 'password' name='credentials[password]' placeholder='Password'>
-        <input type = 'submit' value='Sign In'>
-      </form>
+      <div id = 'sign-in-modal' class = 'modal'>
+        <div class = 'modal-content'>
+          <span class = "close">&times;</span>
+          <form id = 'sign-in'>
+            <input type = 'text' name = 'credentials[email]' placeholder='Email'>
+            <input type = 'password' name='credentials[password]' placeholder='Password'>
+            <input type = 'submit' value='Sign In'>
+          </form>
+        </div>
+      </div>  
 
-      <form id = 'sign-out'>
+      <!-- <form id = 'sign-out'>
         <input type = 'submit' value='Sign Out'>
-      </form>
+      </form> -->
 
-      <form id = 'change-password'>
-        <input type = 'password' name = 'passwords[old]' placeholder='Old Password'>
-        <input type = 'password' name = 'passwords[new]' placeholder='New Password'>
-        <input type = 'submit' value='Change Password'>
-      </form>
+      <div id = 'change-password-modal' class = 'modal'>
+          <div class = 'modal-content'>
+          <span class = "close">&times;</span>
+          <form id = 'change-password'>
+            <input type = 'password' name = 'passwords[old]' placeholder='Old Password'>
+            <input type = 'password' name = 'passwords[new]' placeholder='New Password'>
+            <input type = 'submit' value='Change Password'>
+          </form>
+        </div>
+      </div>  
 
       <p id = 'message'></p>
     </header>
