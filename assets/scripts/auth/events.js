@@ -47,10 +47,14 @@ const addHandler = () => {
   // button modal handlers
   $('#sign-up-button').on('click', () => $('#sign-up-modal').css('display', 'block'))
 
+  $(".close").on('click', () => $(".modal").css("display", "none"))
+
+
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
   $('#change-password').on('submit', onChangePassword)
   $('#sign-out').on('submit', onSignOut)
+
 }
 
 module.exports = {
