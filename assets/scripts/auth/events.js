@@ -50,7 +50,7 @@ const addHandler = () => {
   $('#sign-in-button').on('click', () => $('#sign-in-modal').css('display', 'block')) 
   $('#change-password-button').on('click', () => $('#change-password-modal').css('display', 'block')) 
 
-  $(".close").on('click', () => $(".modal").css("display", "none"))
+  $(".close").on('click', ui.closeModal)
 
 
   $('#sign-up').on('submit', onSignUp)

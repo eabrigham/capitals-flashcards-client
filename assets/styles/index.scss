@@ -1,12 +1,14 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
-body {
-    text-align: center;
-}
+
 header {
     background: url("https://imgur.com/OdseQ9O");
     background-size: cover;
+}
+body {
+    text-align: center;
+    background-color: #9bc;
 }
 
 .modal {
@@ -40,4 +42,25 @@ header {
 
 #sign-out-button, #change-password-button {
     display: none;
+}
+
+#flashcard {
+    display: none;
+    height: 300px;
+    width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #e0e0a0;
+    border-radius: 15px; 
+}
+
+.question {
+    height: 100px;
+    width: 200px;
+    padding: 50px;
+    margin: 30px auto 20px auto;
+    border: 2px solid #568;
+    border-radius: 10px;
+    color: #246;
+    font-size: 30px;
 }

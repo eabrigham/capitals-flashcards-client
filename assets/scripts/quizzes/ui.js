@@ -4,7 +4,7 @@ const newQuestion = function (data) {
     console.log('In ui.newQuestion and the data is ', data)
     console.log('In ui.newQuestion and the quizzes are', data.quizzes)
     if (data.quizzes = {} ) {
-        $('#question').text(`You've already learned all the capitals-- congrats!`)
+        $('#display-answer').text(`You've already learned all the capitals-- congrats!`)
         return false
     }
     const selector = Math.floor(data.quizzes.length * Math.random())
@@ -13,7 +13,7 @@ const newQuestion = function (data) {
     console.log('In ui.newQuestion and the quiz is', quiz)
     store.quiz = quiz
 
-    $('#question').text(`What is the capital of ${quiz.card.side_a}`)
+    $('#question').text(`${quiz.card.side_a}`)
 }
 
 const updateQuizSuccess = function (data) {
@@ -32,7 +32,7 @@ const deleteSuccess = function (data) {
 
 const apiFailure = function (error) {
     console.log('api.updateCorrect failed and the errors are ', error)
-    $('#question').text(`Failed to connect to server.`)
+    $('#display-answer').text(`Failed to connect to server.`)
 }
 
 module.exports = {

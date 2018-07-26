@@ -14,6 +14,7 @@
     <body>
     <header>
       <h1>Capital Flashcards</h1>
+    </header>
 
       <button id='sign-up-button'>Sign Up</button>
       <button id='sign-in-button'>Sign In</button>
@@ -30,6 +31,7 @@
             <input type = 'password' name='credentials[password_confirmation]' placeholder='Confirm Password'>
             <input type = 'submit' value='Sign Up'>
           </form>
+          <p class = 'message'></p>
         </div>
       </div>  
 
@@ -41,6 +43,7 @@
             <input type = 'password' name='credentials[password]' placeholder='Password'>
             <input type = 'submit' value='Sign In'>
           </form>
+          <p class = 'message'></p>
         </div>
       </div>  
 
@@ -56,14 +59,17 @@
             <input type = 'password' name = 'passwords[new]' placeholder='New Password'>
             <input type = 'submit' value='Change Password'>
           </form>
+          <p class = 'message'></p>
         </div>
       </div>  
 
-      <p id = 'message'></p>
-    </header>
 
-      <div>
-        <p id = 'question'></p>
+
+
+      <div id = 'flashcard'>
+        <div class = 'question'>
+          <p id = 'question'></p>
+        </div>
         <p id = 'display-answer'></p>
         <form id = 'answer'>
           <input type = 'text' name = 'answer' placeholder='Answer Here'>
