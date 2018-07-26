@@ -8,20 +8,17 @@ const mismatchedPasswords = function () {
   $('.message').text(`Passwords don't match. Please sign up again.`)
 }
 const signUpSuccess = function (data) {
-  console.log('sign up success ran')
   document.getElementById('sign-up').reset()
   $('.message').text('Signed up successfully')
   window.setTimeout(closeModal, 1000)
 }
 
 const signUpFailure = function (err) {
-  console.log('sign up failure ran')
   document.getElementById('sign-up').reset()
   $('.message').text('Error on sign up.')
 }
 
 const signInSuccess = function (data) {
-  console.log('sign in success ran')
   document.getElementById('sign-in').reset()
   $('.message').text('Signed in successfully')
   $('#sign-up-button, #sign-in-button').css('display', 'none')

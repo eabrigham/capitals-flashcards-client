@@ -3,18 +3,14 @@ const store = require('./../store.js')
 const newQuestion = function (data) {
     document.getElementById('answer').reset()
     $('#display-answer').text('')
-    console.log('In ui.newQuestion and the data is ', data)
-    console.log('In ui.newQuestion and the quizzes are', data.quizzes)
     if (data.quizzes == {} ) {
         $('#display-answer').text(`You've already learned all the capitals-- congrats!`)
         return false
     }
+    // get random quiz from quizzes
     const selector = Math.floor(data.quizzes.length * Math.random())
-    console.log('selector is ', selector)
     const quiz = data.quizzes[selector]
-    console.log('In ui.newQuestion and the quiz is', quiz)
     store.quiz = quiz
-
     $('#question').text(`${quiz.card.side_a}`)
 }
 
@@ -28,12 +24,10 @@ const updateQuizSuccess = function (data) {
 }
 
 const deleteSuccess = function (data) {
-    console.log('delete success ran and data is ', data)
     $('#display-answer').text("Congrats, you've learned this capital!")
 }
 
 const apiFailure = function (error) {
-    console.log('api.updateCorrect failed and the errors are ', error)
     $('#display-answer').text(`Failed to connect to server.`)
 }
 

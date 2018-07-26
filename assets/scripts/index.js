@@ -9,7 +9,6 @@ const quizzesEvents = require('./quizzes/events.js')
 // require('./example')
 
 $(() => {
-  console.log ('document ready running in index.js')
   authEvents.addHandler()
   quizzesEvents.addHandler()
 })

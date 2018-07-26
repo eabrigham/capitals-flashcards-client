@@ -7,7 +7,6 @@ const onNewQuestion = function(event) {
     if (event) {
     event.preventDefault()
     }
-    console.log('in new question')
     api.getQuizzes()
         .then(ui.newQuestion)
         .catch(ui.apiFailure)
@@ -18,7 +17,7 @@ const onAnswerQuestion = function(event) {
     const consecutiveCorrect = getConsecutiveCorrect (event)
 
     if (consecutiveCorrect >= 3) {
-        // congradulate user and delete quiz
+        // delete quiz and congratulate user for learning capital
         api.deleteQuiz()
             .then(ui.deleteSuccess)
             .catch(ui.apiFailure)
@@ -36,10 +35,8 @@ const getConsecutiveCorrect = function (event) {
     const data = getFormFields(event.target)
     // determine whether answer is correct based on the stored value of quiz answer
     const isCorrect = data.answer == store.quiz.card.side_b
-    console.log(`The capital is ${store.quiz.card.side_b}. Answer correct? ${isCorrect}`)
     let consecutiveCorrect = store.quiz.consecutive_correct
     isCorrect ? consecutiveCorrect++ : consecutiveCorrect = 0
-    console.log('After guess, consecutiveCorrect is ', consecutiveCorrect)
     return consecutiveCorrect
 }
 

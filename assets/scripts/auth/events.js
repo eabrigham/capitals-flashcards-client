@@ -22,14 +22,12 @@ const onSignUp = function (event) {
 const onSignIn = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
-  // TODO verify data format
   api.signIn(data)
     .then(ui.signInSuccess)
     .catch(ui.signInFailure)
 }
 
 const onSignOut = function (event) {
-  console.log('running sign out function')
   event.preventDefault()
   api.signOut()
     .then(ui.signOutSuccess)
