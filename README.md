@@ -2,6 +2,8 @@
 An application front-end to study European capitals.
 Written in Javascript with JQuery.
 
+See the API at: https://github.com/eabrigham/capitals-flashcards-api
+
 Wireframe:
 [Imgur](https://i.imgur.com/smjrTqu.jpg?2)
 
