@@ -1,9 +1,11 @@
 const store = require('./../store.js')
 
 const newQuestion = function (data) {
+    document.getElementById('answer').reset()
+    $('#display-answer').text('')
     console.log('In ui.newQuestion and the data is ', data)
     console.log('In ui.newQuestion and the quizzes are', data.quizzes)
-    if (data.quizzes = {} ) {
+    if (data.quizzes == {} ) {
         $('#display-answer').text(`You've already learned all the capitals-- congrats!`)
         return false
     }

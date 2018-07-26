@@ -48,19 +48,15 @@ body {
     display: none;
     height: 300px;
     width: 400px;
-    margin: 0 auto;
+    margin: 20px auto;
     padding: 20px;
     background-color: #e0e0a0;
     border-radius: 15px; 
 }
 
-.question {
-    height: 100px;
-    width: 200px;
-    padding: 50px;
-    margin: 30px auto 20px auto;
-    border: 2px solid #568;
-    border-radius: 10px;
+#question {
     color: #246;
     font-size: 30px;
+    padding: 50px 0;
 }
+

@@ -4,8 +4,10 @@ const api = require('./api.js')
 const ui = require('./ui.js')
 
 const onNewQuestion = function(event) {
+    if (event) {
     event.preventDefault()
-    console.log('new question clicked')
+    }
+    console.log('in new question')
     api.getQuizzes()
         .then(ui.newQuestion)
         .catch(ui.apiFailure)
@@ -57,5 +59,6 @@ const addHandler = () => {
 }
 
 module.exports = {
-    addHandler
+    addHandler,
+    onNewQuestion
 }

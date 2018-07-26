@@ -1,6 +1,7 @@
 'use strict'
 
 const store = require('../store.js')
+const quizEvents = require('../quizzes/events.js')
 
 const mismatchedPasswords = function () {
   document.getElementById('sign-up').reset()
@@ -10,6 +11,7 @@ const signUpSuccess = function (data) {
   console.log('sign up success ran')
   document.getElementById('sign-up').reset()
   $('.message').text('Signed up successfully')
+  window.setTimeout(closeModal, 1000)
 }
 
 const signUpFailure = function (err) {
@@ -24,8 +26,10 @@ const signInSuccess = function (data) {
   $('.message').text('Signed in successfully')
   $('#sign-up-button, #sign-in-button').css('display', 'none')
   $('#sign-out-button, #change-password-button').css('display', 'inline')
-  $('#flashcard').css('display', 'block')
   store.user = data.user
+  setTimeout(closeModal, 1000)
+  setTimeout(() => $('#flashcard').css('display', 'block'), 1100)
+  quizEvents.onNewQuestion()
 }
 
 const signInFailure = function (err) {
@@ -36,6 +40,8 @@ const signInFailure = function (err) {
 const changePasswordSuccess = function (data) {
   document.getElementById('change-password').reset()
   $('.message').text('Changed password successfully')
+  window.setTimeout(closeModal, 1000)
+
 }
 
 const changePasswordFailure = function (err) {
@@ -46,7 +52,8 @@ const changePasswordFailure = function (err) {
 const signOutSuccess = function (data) {
   $('.message').text('Signed out successfully')
   $('#sign-up-button, #sign-in-button').css('display', 'inline')
-  $('#sign-out-button, #change-password-button').css('display', 'none')
+  $('#sign-out-button, #change-password-button, #flashcard').css('display', 'none')
+  $('#question, #display-answer').text('')
   store.user = null
 }
 
